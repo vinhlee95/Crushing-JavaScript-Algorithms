@@ -16,15 +16,26 @@
 //       '##  '
 //       '### '
 //       '####'
-function steps(n) {
-   for (let i = 1; i <= n; i++) {
-      console.log('#'.repeat(i).padEnd(n))
+function steps(n, row=0, stair= '') {
+   // base case
+   if(n===row) {
+      return
    }
+   if(n===stair.length) {
+      console.log(stair)
+      return steps(n, row+1)
+   }
+   if(stair.length <= row) {
+      stair += '#'
+   } else {
+      stair += ' '
+   }
+   steps(n, row, stair)
 }
 
-
-
 module.exports = steps;
+
+// SOLUTION 1
 
 // function steps(n) {
 //    for (let row = 0; row < n; row++) {
@@ -40,5 +51,13 @@ module.exports = steps;
 //       // log the stair after 1 row of '#' was created
 //       // get 1 log for each row
 //       console.log(stair);
+//    }
+// }
+
+// SOLUTION 2
+
+// function steps(n) {
+//    for (let i = 1; i <= n; i++) {
+//       console.log('#'.repeat(i).padEnd(n))
 //    }
 // }
