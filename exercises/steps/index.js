@@ -16,19 +16,29 @@
 //       '##  '
 //       '### '
 //       '####'
-
 function steps(n) {
-   for(let row = 0; row < n; row++) {
-      let stair = '';      
-      for(let column = 0; column < n; column ++) {
-         if(column <= row) {
-            stair += '#';
-         } else {
-            stair += ' ';
-         }
-      }
-   console.log(stair);      
+   for (let i = 1; i <= n; i++) {
+      console.log('#'.repeat(i).padEnd(n))
    }
 }
 
+
+
 module.exports = steps;
+
+// function steps(n) {
+//    for (let row = 0; row < n; row++) {
+//       // for each row create 1 stair
+//       let stair = '';
+//       for (let column = 0; column < n; column++) {
+//          if (column <= row) {
+//             stair += '#';
+//          } else {
+//             stair += ' ';
+//          }
+//       }
+//       // log the stair after 1 row of '#' was created
+//       // get 1 log for each row
+//       console.log(stair);
+//    }
+// }
