@@ -8,10 +8,30 @@
 //   palindrome("abcdefg") === false
 
 function palindrome(str) {
-   return str.split('').every((char, i) => {
-      return char === str.split('')[str.length - i -1];
-   });
+   function reverseString(str) {
+      let initialString = ""
+      for (let character of str) {
+         initialString = character + initialString
+      }
+      return initialString
+   }
+   let isPlaindrome = reverseString(str)
+   if (isPlaindrome === str) {
+      return true
+   } else {
+      return false
+   }
 }
+
+// function palindrome(str) {
+//    // make a reversed string
+//    const reversedString = '';
+//    str.split('').forEach(char => {
+//       reversedString = char + reversedString;
+//       console.log(reversedString)
+//    });
+//    return reversedString === str;
+// }
 
 // function palindrome(str) {
 //    const reversedString = str.split('').reverse().join('');
